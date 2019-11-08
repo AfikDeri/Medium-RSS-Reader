@@ -1,0 +1,166 @@
+.hero {
+    background: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    max-height: 400px;
+
+    h1 {
+        font-size: 2em;
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        height: 30vh;
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    @media screen and (min-width: $screen-md) {
+        h1 {
+            font-size: 5em;
+        }
+    }
+}
+
+.search-form {
+    width: 500px;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid $border-light;
+    border-radius: 3px;
+    padding: 20px;
+
+    form {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        position: relative;
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $border-dark;
+            padding: 10px;
+            font-size: 1.6em;
+            margin-right: 10px;
+            outline: none;
+        }
+
+        button {
+            background: $blue;
+            border: none;
+            color: #fff;
+            font-size: 1.4em;
+            padding: 10px 20px;
+            width: 120px;
+            transition: background .25s;
+
+            &:disabled {
+                background: rgba($blue, .3);
+            }
+        }
+
+        p.error {
+            position: absolute;
+            color: $error-red;
+            font-size: 12px;
+            top: -24px;
+            left: 9px;
+        }
+    }
+
+    .history-searches {
+        margin-left: 4px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin-bottom: 8px;
+
+                button {
+                    background: $blue;
+                    color: #fff;
+                    padding: 5px 15px;
+                    border: none;
+                    border-radius: 15px;
+                    margin-right: 7px;
+                    cursor: pointer;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $screen-sm) {
+        margin: 40px auto;
+    }
+}
+
+p.not-found {
+    font-size: 2em;
+    text-align: center;
+    margin: 50px;
+}
+
+.feed {
+    p.results-for {
+        font-size: 1.4em;
+    }
+
+    .feed-item {
+        border: 1px solid $border-dark;
+        padding: 20px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+            .title {
+                font-size: 2em;
+            }
+
+            button {
+                background: none;
+                color: $blue;
+                border: none;
+                text-decoration: underline;
+                padding: 10px;
+                min-width: 90px;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        .author {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+
+            .visit-medium {
+                color: $blue;
+                margin-left: 10px;
+            }
+        }
+
+        .content {
+            font-size: 1.4em;
+            position: relative;
+            max-width: 100%;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
