@@ -20,9 +20,6 @@ const formProps = {
 
 describe('RSS Reader', () => {
     let wrapper;
-    const setState = jest.fn();
-    const useStateSpy = jest.spyOn(React, 'useState')
-    useStateSpy.mockImplementation((init) => [init, setState]);
 
     describe('App', () => {
         it('Renders the component', () => {
