@@ -4,14 +4,11 @@ const parseString = require('xml2js').parseString;
 const get = require('lodash/get');
 
 exports.getFeedByName = async (name) => {
-    try {
-        const feedXml = await fetchFeed(name);
-        const parse = promisify(parseString);
-        const feed = await parse(feedXml);
-        return get(feed, 'rss.channel[0].item', []);
-    } catch (e) {
-        throw Error(e);
-    }
+    const feedXml = await fetchFeed(name),
+        parse = promisify(parseString),
+        feed = await parse(feedXml);
+
+    return get(feed, 'rss.channel[0].item', []);
 };
 
 function fetchFeed(name) {

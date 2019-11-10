@@ -9,7 +9,7 @@ function Feed({ term, items, loading }) {
     }
 
     if (!items.length && term) {
-        return <p className="not-found">Feed "{term}" not found <span role="img" aria-label="sad">😪</span></p>
+        return <p className="not-found">The feed "{term}" could not be found <span role="img" aria-label="sad">😪</span></p>
     }
 
     return (

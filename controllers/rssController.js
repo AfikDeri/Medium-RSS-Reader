@@ -13,9 +13,7 @@ exports.search = async (req, res) => {
 
         feed = await getFeedByName(term);
     } catch (error) {
-        return res.json({
-            success: false
-        });
+        return res.json({success: false});
     }
 
     if (feed.length) {
