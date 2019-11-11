@@ -5,6 +5,7 @@ export const useMediumApi = (term, setHistory) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+        if (!term) { return; }
         setLoading(true);
 
         fetch(`/api/search?term=${term}`)

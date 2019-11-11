@@ -13,6 +13,7 @@ exports.search = async (req, res) => {
 
         feed = await getFeedByName(term);
     } catch (error) {
+        console.log('error', error);
         return res.json({success: false});
     }
 
@@ -36,9 +37,9 @@ function addHistoryItem(term) {
         return;
     }
 
-    if (historySearches > 4) {
-        historySearches = historySearches.slice(Math.max(historySearches.length - 4, 0));
-    }
+    historySearches.unshift(term);
 
-    historySearches.push(term);
+    if (historySearches.length > 5) {
+        historySearches.pop();
+    }
 }
