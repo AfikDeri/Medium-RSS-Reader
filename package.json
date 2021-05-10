@@ -18,7 +18,7 @@
     "dotenv": "^8.2.0",
     "es6-promisify": "^6.0.2",
     "express": "^4.17.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.0",
     "xml2js": "^0.4.22"
